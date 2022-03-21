@@ -1,36 +1,36 @@
 import sys
 sys.stdin = open("input.text","r")
-import sys
-N,M = map(int,sys.stdin.readline().split())
-A = list(map(int,sys.stdin.readline().split()))
 
-A = sorted(A)
-B=[]
-C=[]
-BB=[]
-CC=[]
-cnt = 0
-maxValue = 0
-for i in A:
-    if i>0:
-        B.append(i)
-    else:
-        C.append(i)
-B.reverse()
-for i in B:
-    cnt +=1
-    if cnt%M==1:
-        BB.append(i)
-cnt = 0
-for i in C:
-    cnt +=1
-    if cnt%M==1:
-        CC.append(i)
+n,m=map(int, input().split())
+loc=list(map(int, input().split()))
 
-if len(BB)>0 and len(CC)>0:
-    maxValue = max(BB[0],-CC[0])
-elif len(BB)==0:
-    maxValue = -CC[0]
-else:
-    maxValue = BB[0]
-print(sum(BB)*2-sum(CC)*2-maxValue)
+plus=[]
+minus=[]
+for i in loc:
+  if i>0:
+    plus.append(i)
+  else:
+    minus.append(i)
+
+plus.sort(reverse=True)
+minus.sort()
+
+max_value=0
+for i in loc:
+  if abs(i)>abs(max_value):
+    max_value=i
+
+lst=[]
+for i in range(0, len(plus), m):
+  if plus[i]!=max_value:
+    lst.append(plus[i])
+    
+for i in range(0, len(minus), m):
+  if minus[i]!=max_value:
+    lst.append(minus[i])
+
+result=abs(max_value)
+for i in lst:
+  result+=abs(i*2)
+print(result)
+
