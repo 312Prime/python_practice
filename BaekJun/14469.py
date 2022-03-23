@@ -1,6 +1,6 @@
 import sys
 sys.stdin = open("input.text","r")
-import sys
+
 n = int(sys.stdin.readline())
 A = [list(map(int,sys.stdin.readline().split())) for _ in range(n)]
 A = sorted(A)
