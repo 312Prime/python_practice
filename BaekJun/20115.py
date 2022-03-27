@@ -1,10 +1,7 @@
-import heapq
 import sys
 sys.stdin = open("input.text","r")
 
-import heapq
 import sys
-
 n= int(sys.stdin.readline())
 A = list(map(float,sys.stdin.readline().split()))
 A.sort(reverse=True)
