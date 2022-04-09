@@ -1,7 +1,7 @@
 import sys
 sys.stdin = open("input.text","r")
 
-n=int(input())
+n=int(sys.stdin.readline())
 A=[0,1]
 
 for i in range(n):
