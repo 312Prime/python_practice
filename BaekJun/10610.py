@@ -1,7 +1,7 @@
 import sys
 sys.stdin = open("input.text","r")
 
-N = list(map(int,input()))
+N = list(map(int,sys.stdin.readline()))
 isN0 = N.count(0)!=0
 isN3 = sum(N)%3==0
 
