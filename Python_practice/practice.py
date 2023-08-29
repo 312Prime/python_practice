@@ -1,5 +1,6 @@
-n= int(input())
-a=[]
-for i in range (1,n+1):
-  a=input()
-print(max(a)-min(a))
+import sys
+sys.stdin = open("/Users/sangillee/Python_practice/Python_practice/input.txt", "r")
+
+line = list(map(int, sys.stdin.readline().split()))
+
+print(line)
